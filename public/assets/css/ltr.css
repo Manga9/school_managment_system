@@ -1586,7 +1586,7 @@ pre code {
   opacity: 1; }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 2px); }
+  height: calc(2.25rem + 10px); }
 
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -1637,7 +1637,7 @@ select.form-control:focus::-ms-value {
   border-radius: .2rem; }
 
 .input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-append > select.input-group-text:not([size]):not([multiple]), .input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-prepend > select.input-group-text:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]), select.form-control-sm:not([size]):not([multiple]) {
-  height: calc(1.8125rem + 2px); }
+  height: calc(1.8125rem + 10px); }
 
 .form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-append > .btn, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-prepend > .input-group-text {
   padding: .5rem 1rem;
@@ -1646,7 +1646,7 @@ select.form-control:focus::-ms-value {
   border-radius: .3rem; }
 
 .input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]), .input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]), .input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]), select.form-control-lg:not([size]):not([multiple]) {
-  height: calc(2.875rem + 2px); }
+  height: calc(2.875rem + 10px); }
 
 .form-group {
   margin-bottom: 1rem; }
@@ -14981,7 +14981,7 @@ button.toast-close-button {
 
 /*# sourceMappingURL=bootstrap-datepicker.css.map */
 /*
-    Common 
+    Common
 */
 .wizard,
 .tabcontrol {
@@ -21171,10 +21171,10 @@ footer a {
   color: rgba(220, 53, 69, 0.4) !important; }
 
 .modal-dialog select.form-control:not([size]):not([multiple]) {
-  height: calc(3.1rem + 2px); }
+  height: calc(3.1rem + 10px); }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.8rem + 2px); }
+  height: calc(2.8rem + 10px); }
 
 /* Sparkline chart */
 .jqstooltip {

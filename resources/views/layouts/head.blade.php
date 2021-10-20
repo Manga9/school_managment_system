@@ -1,5 +1,6 @@
 <!-- Title -->
 <title>@yield("title")</title>
+@toastr_css
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />

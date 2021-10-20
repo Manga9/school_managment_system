@@ -3,10 +3,7 @@
 <!-- plugins-jquery -->
 <script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
 <!-- plugin_path -->
-<script>
-    var plugin_path = 'js/';
-
-</script>
+<script type="text/javascript">var plugin_path = '{{ asset('assets/js') }}/';</script>
 
 <!-- chart -->
 <script src="{{ URL::asset('assets/js/chart-init.js') }}"></script>
@@ -29,3 +26,45 @@
 <script src="{{ URL::asset('assets/js/lobilist.js') }}"></script>
 <!-- custom -->
 <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
+
+@if (App::getLocale() == 'en')
+    <script src="{{ URL::asset('assets/js/bootstrap-datatables/en/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/bootstrap-datatables/en/dataTables.bootstrap4.min.js') }}"></script>
+@else
+    <script src="{{ URL::asset('assets/js/bootstrap-datatables/ar/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/bootstrap-datatables/ar/dataTables.bootstrap4.min.js') }}"></script>
+@endif
+@toastr_js
+@toastr_render
+
+<script>
+    function CheckAll(className, elem) {
+        var elements = document.getElementsByClassName(className);
+        var l = elements.length;
+        if (elem.checked) {
+            for (var i = 0; i < l; i++) {
+                elements[i].checked = true;
+            }
+        } else {
+            for (var i = 0; i < l; i++) {
+                elements[i].checked = false;
+                elem.checked = false;
+            }
+        }
+    }
+</script>
+
+<script>
+    $("#delete_all_btn").click(function(e) {
+        var selected = new Array();
+        $("#datatable input[type=checkbox]:checked").each(function() {
+            selected.push(this.value);
+        });
+        if (selected.length > 0) {
+            $('#delete_all').modal('show');
+            $('input[id="delete_all_id"]').val(selected);
+        } else {
+            e.preventDefault();
+        }
+    });
+</script>
