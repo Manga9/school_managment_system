@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBloodsTable extends Migration
+class CreateParentAttachmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateBloodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bloods', function (Blueprint $table) {
+        Schema::create('parent_attachments', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
-            $table->string('name');
+            $table->string('file_name');
+            $table->bigInteger('parent_id');
+            $table->foreign('parent_id')->references('id')->on('my_parents')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateBloodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bloods');
+        Schema::dropIfExists('parent_attachments');
     }
 }

@@ -12,7 +12,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Auth::routes(['register' => false]);
 
-    Route::view('/', 'auth.login');
+    Route::view('/', 'auth.login')->middleware('guest');
 
 
     // start
@@ -31,6 +31,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('sections', SectionController::class);
         Route::post('/sections/delete_all', [\App\Http\Controllers\SectionController::class, 'delete_all'])->name('sections.delete_all');
         Route::get('classes/{id}', [\App\Http\Controllers\SectionController::class, 'getClasses'])->name('sections.getClasses');
+
+        Route::view('parents/add_parents', 'livewire.parents.show_wizard_form')->name('add_parents');
+
+        Route::resource('teachers', TeacherController::class);
     });
 
 });

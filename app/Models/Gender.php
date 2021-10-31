@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Nationality extends Model
+class Gender extends Model
 {
     use HasTranslations;
 
-    protected $table= "nationalities";
     protected $fillable = ['name'];
-    public $translatable = ['name'];
-
-
+    protected $table = 'genders';
+    protected $translatable = ['name'];
 
 }

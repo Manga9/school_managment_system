@@ -6,6 +6,7 @@ use App\Http\Requests\section\StoreSectionRequest;
 use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Section;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -29,7 +30,8 @@ class SectionController extends Controller
     public function create()
     {
         $grades = Grade::select('name', 'id')->get();
-        return view('sections.create', compact('grades'));
+        $teachers = Teacher::all();
+        return view('sections.create', compact('grades', 'teachers'));
     }
 
     /**
@@ -41,15 +43,17 @@ class SectionController extends Controller
     public function store(StoreSectionRequest $request)
     {
         try {
-            Section::create([
-                'name' => ['en' => $request->name_en, 'ar' => $request->name_ar],
-                'grade_id' => $request->grade,
-                'classroom_id' => $request->classroom,
-            ]);
+            $section = new Section();
+            $section->name = ['en' => $request->name_en, 'ar' => $request->name_ar];
+            $section->grade_id = $request->grade;
+            $section->classroom_id = $request->classroom;
+            $section->save();
+            $section->teachers()->attach($request->teacher);
             toastr()->success(trans('messages.success'));
             return redirect(route('sections.index'));
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error', $e->getMessage()]);
+//            return redirect()->back()->withErrors(['error', $e->getMessage()]);
+            return $e->getMessage();
         }
     }
 

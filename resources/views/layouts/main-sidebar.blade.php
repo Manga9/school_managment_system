@@ -43,31 +43,21 @@
                         <a href="{{route('sections.index')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">{{trans('sections.sections')}}</span> </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart">
-                            <div class="pull-left"><i class="ti-pie-chart"></i><span
-                                    class="right-nav-text">Charts</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="chart" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="chart-js.html">Chart.js</a> </li>
-                            <li> <a href="chart-morris.html">Chart morris </a> </li>
-                            <li> <a href="chart-sparkline.html">Chart Sparkline</a> </li>
-                        </ul>
+                        <a href="{{route('add_parents')}}"><div class="pull-left"><i class="ti-pie-chart"></i><span
+                                class="right-nav-text">{{trans('parents.parents')}}</span></div>
+                            <div class="clearfix"></div></a>
                     </li>
 
                     <!-- menu font icon-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">font
-                                    icon</span></div>
+                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('teachers.teachers')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
                         <ul id="font-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                            <li> <a href="themify-icons.html">Themify icons</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
+                            <li> <a href="{{route('teachers.index')}}">{{trans('teachers.teachers-list')}}</a> </li>
+                            <li> <a href="{{route('teachers.create')}}">{{trans('teachers.add')}}</a> </li>
                         </ul>
                     </li>
                     <!-- menu title -->

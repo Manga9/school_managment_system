@@ -50,6 +50,22 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="teacher" class="form-label">{{trans('teachers.teacher')}}</label>
+                                    <div class="box">
+                                        <select required class="form-control" name="teacher" id="teacher">
+                                            <option selected disabled>{{trans('teachers.choose')}}</option>
+                                            @foreach($teachers as $teacher)
+                                                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('teacher')
+                                        <div>{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label for="grades" class="mr-sm-2">{{trans('grades.grade')}}</label>
                                 <div class="box">
