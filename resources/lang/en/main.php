@@ -13,4 +13,11 @@ return [
     'close' => 'Close',
     'save' => 'Save',
     'delete-all' => 'Delete All Selected Rows',
+    'choose' => 'Choose...',
+    'next' => 'Next',
+    'back' => 'Back',
+    'email' => 'Email',
+    'password' => 'Password',
+    'finish' => 'Finish',
+    'attachFile' => 'Choose Attachments',
 ];

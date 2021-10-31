@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\section;
+namespace App\Http\Requests\teacher;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSectionRequest extends FormRequest
+class StoreTeacherRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,14 @@ class StoreSectionRequest extends FormRequest
     public function rules()
     {
         return [
+            'email' => 'required|email|unique:teachers,email,' . request()->get('email') . ',email',
+            'password' => 'required|min:8',
             'name_en' => 'required',
             'name_ar' => 'required',
-            'teacher' => 'required',
-            'grade' => 'required',
-            'classroom' => 'required',
+            'join' => 'required',
+            'spec' => 'required',
+            'gender' => 'required',
+            'address' => 'required',
         ];
     }
 }
