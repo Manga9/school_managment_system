@@ -54,7 +54,7 @@
                                 <div class="mb-3">
                                     <label for="teacher" class="form-label">{{trans('teachers.teacher')}}</label>
                                     <div class="box">
-                                        <select required class="form-control" name="teacher" id="teacher">
+                                        <select required class="form-control" name="teacher[]" id="teacher" multiple>
                                             <option selected disabled>{{trans('teachers.choose')}}</option>
                                             @foreach($teachers as $teacher)
                                                 <option value="{{$teacher->id}}">{{$teacher->name}}</option>

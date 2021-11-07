@@ -8,6 +8,7 @@ use App\Models\Grade;
 use App\Models\Section;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SectionController extends Controller
 {
@@ -52,7 +53,6 @@ class SectionController extends Controller
             toastr()->success(trans('messages.success'));
             return redirect(route('sections.index'));
         } catch (\Exception $e) {
-//            return redirect()->back()->withErrors(['error', $e->getMessage()]);
             return $e->getMessage();
         }
     }
@@ -78,7 +78,9 @@ class SectionController extends Controller
     {
         $grades = Grade::select('name', 'id')->get();
         $classrooms = Classroom::select('name', 'id', 'grade_id')->get();
-        return view('sections.edit', compact('section', 'grades', 'classrooms'));
+        $teachers = Teacher::all();
+        $sections_teachers = DB::table('section_teacher')->get();
+        return view('sections.edit', compact('section', 'grades', 'classrooms', 'teachers', 'sections_teachers'));
     }
 
     /**
@@ -102,6 +104,7 @@ class SectionController extends Controller
                 'classroom_id' => $request->classroom,
                 'status' => $status,
             ]);
+            $section->teachers()->sync($request->teacher);
             toastr()->success(trans('messages.update'));
             return redirect(route('sections.index'));
         } catch(\Exception $e) {

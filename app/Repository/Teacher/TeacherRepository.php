@@ -5,9 +5,10 @@ namespace App\Repository\Teacher;
 use App\Models\Gender;
 use App\Models\Specialization;
 use App\Models\Teacher;
+use App\Repository\MainRepositoryInterface;
 
-class TeacherRepository implements TeacherRepositoryInterface {
-    public function getAllTeachers()
+class TeacherRepository implements MainRepositoryInterface {
+    public function getAllItems()
     {
         return Teacher::all();
     }
@@ -22,7 +23,7 @@ class TeacherRepository implements TeacherRepositoryInterface {
         return Gender::all();
     }
 
-    public function storeTeacher($request)
+    public function storeItem($request)
     {
         try {
             Teacher::create([
@@ -41,12 +42,12 @@ class TeacherRepository implements TeacherRepositoryInterface {
         }
     }
 
-    public function editTeacher($id)
+    public function editItem($id)
     {
         return Teacher::findOrFail($id);
     }
 
-    public function updateTeacher($request, $id)
+    public function updateItem($request, $id)
     {
         try {
             $teacher = Teacher::findOrFail($id);
@@ -66,7 +67,7 @@ class TeacherRepository implements TeacherRepositoryInterface {
         }
     }
 
-    public function deleteTeacher($id)
+    public function deleteItem($id)
     {
         try {
             Teacher::findOrFail($id)->delete();
