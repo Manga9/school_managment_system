@@ -3,22 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\teacher\StoreTeacherRequest;
-use App\Repository\Teacher\TeacherRepositoryInterface;
-use App\Teacher;
-use Illuminate\Http\Request;
+use App\Repository\MainRepositoryInterface;
 
 class TeacherController extends Controller
 {
     protected $teacher;
 
-    public function __construct(TeacherRepositoryInterface $teacher)
+    public function __construct(MainRepositoryInterface $teacher)
     {
         $this->teacher = $teacher;
     }
 
     public function index()
     {
-        $teachers = $this->teacher->getAllTeachers();
+        $teachers = $this->teacher->getAllItems();
         return view('teachers.teachers', compact('teachers'));
     }
 
@@ -31,7 +29,7 @@ class TeacherController extends Controller
 
     public function store(StoreTeacherRequest $request)
     {
-       return $this->teacher->storeTeacher($request);
+       return $this->teacher->storeItem($request);
     }
 
     public function show(Teacher $teacher)
@@ -41,7 +39,7 @@ class TeacherController extends Controller
 
     public function edit($id)
     {
-        $teacher = $this->teacher->editTeacher($id);
+        $teacher = $this->teacher->editItem($id);
         $specs = $this->teacher->getAllSpecilaizations();
         $genders = $this->teacher->getAllGenders();
         return view('teachers.edit', compact('teacher', 'specs', 'genders'));
@@ -49,11 +47,11 @@ class TeacherController extends Controller
 
     public function update(StoreTeacherRequest $request, $id)
     {
-        return $this->teacher->updateTeacher($request, $id);
+        return $this->teacher->updateItem($request, $id);
     }
 
     public function destroy($id)
     {
-        return $this->teacher->deleteTeacher($id);
+        return $this->teacher->deleteItem($id);
     }
 }

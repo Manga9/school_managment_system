@@ -51,6 +51,26 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="teacher" class="form-label">{{trans('teachers.teacher')}}</label>
+                                    <div class="box">
+                                        <select required class="form-control" name="teacher[]" id="teacher" multiple>
+                                            <option selected disabled>{{trans('teachers.choose')}}</option>
+                                            @foreach($teachers as $teacher)
+                                                <option
+                                                    @foreach($sections_teachers as $sec_tec)
+                                                        @if($sec_tec->teacher_id == $teacher->id && $sec_tec->section_id == $section->id) selected @endif
+                                                    @endforeach
+                                                    value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('teacher')
+                                        <div>{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label for="grades" class="mr-sm-2">{{trans('grades.grade')}}</label>
                                 <div class="box">
