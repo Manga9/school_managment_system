@@ -15,7 +15,7 @@ class Teacher extends Model
 
     public function specialization()
     {
-        return $this->belongsTo(Specialization::class, 'specialization_id');
+        return $this->belongsTo(Specialization::class);
     }
 
     public function gender()

@@ -8,13 +8,9 @@ use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
-
-
     Auth::routes(['register' => false]);
 
     Route::view('/', 'auth.login')->middleware('guest');
-
-
     // start
     Route::group(['middleware' => 'auth'], function () {
 

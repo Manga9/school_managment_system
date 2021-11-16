@@ -20,4 +20,5 @@ return [
     'password' => 'Password',
     'finish' => 'Finish',
     'attachFile' => 'Choose Attachments',
+    'date' => 'Date',
 ];

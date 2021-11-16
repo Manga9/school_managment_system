@@ -6,14 +6,11 @@
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
 @section('PageTitle')
     {{trans('students.students-list')}}
 @stop
-<!-- breadcrumb -->
 @endsection
 @section('content')
-    <!-- row -->
     <div class="row">
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
@@ -60,15 +57,25 @@
                                                 <td>{{$student->myParent->father_name}}</td>
                                                 <td>{{$student->academic_year}}</td>
                                                 <td>
-                                                    <a href="{{route('students.edit',$student->id)}}" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-edit"></i></a>
-                                                    <form method="Post" action="{{route('students.destroy', $student->id)}}" style="display: inline;">
-                                                        @csrf
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('{{trans("messages.confirm")}}')"><i class="ti-trash"></i></button>
-                                                    </form>
-                                                    <a href="{{route('students.show', $student->id)}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true"><i class="fa fa-eye"></i></a>
-
-                                                </td>
+                                                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                        {{trans('main.controls')}}
+                                                    </button>
+                                                    <ul class="dropdown-menu" style="padding: 15px;">
+                                                        <li>
+                                                            <a href="{{route('students.edit',$student->id)}}"><i class="fa fa-edit"></i> {{trans('students.edit')}}</a>
+                                                        </li>
+                                                        <li>
+                                                            <form method="Post" action="{{route('students.destroy', $student->id)}}" style="display: inline;">
+                                                                @csrf
+                                                                {{method_field('DELETE')}}
+                                                                <a type="submit" onclick="return confirm('{{trans("messages.confirm")}}')" style="cursor: pointer"><i class="ti-trash"></i> {{trans('main.delete')}}</a>
+                                                            </form>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('students.show', $student->id)}}"><i class="fa fa-eye"></i> {{trans('students.show')}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </tr>
                                         @endforeach
                                     </table>

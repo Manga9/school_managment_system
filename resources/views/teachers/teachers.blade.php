@@ -62,7 +62,7 @@
                                 <td>{{$i}}</td>
                                 <td>{{$teacher->email}}</td>
                                 <td>{{$teacher->name}}</td>
-                                <td>{{$teacher->specialization_id}}</td>
+                                <td>{{$teacher->specialization->name}}</td>
                                 <td>{{$teacher->gender->name}}</td>
                                 <td>{{$teacher->joining_date}}</td>
                                 <td>{{$teacher->address}}</td>

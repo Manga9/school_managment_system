@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\teacher\StoreTeacherRequest;
-use App\Repository\MainRepositoryInterface;
+use App\Repository\Teacher\TeacherRepository;
 
 class TeacherController extends Controller
 {
     protected $teacher;
 
-    public function __construct(MainRepositoryInterface $teacher)
+    public function __construct(TeacherRepository $teacher)
     {
         $this->teacher = $teacher;
     }
@@ -32,10 +32,10 @@ class TeacherController extends Controller
        return $this->teacher->storeItem($request);
     }
 
-    public function show(Teacher $teacher)
-    {
-        //
-    }
+    // public function show(Teacher $teacher)
+    // {
+    //     //
+    // }
 
     public function edit($id)
     {
