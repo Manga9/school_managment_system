@@ -2,6 +2,7 @@
 
 //use App\Http\Controllers\ClassroomController;
 //use App\Http\Controllers\GradeController;
+
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('promotions',PromotionController::class);
         //============================Students Graduated===========================================
         Route::resource('graduates',GraduatedController::class);
+        //============================Fees=========================================================
+        Route::resource('fees', FeeController::class);
     });
 
 });

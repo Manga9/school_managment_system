@@ -79,7 +79,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="table" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="">{{trans('fees.fees')}}</a> </li>
+                            <li> <a href="{{route('fees.index')}}">{{trans('fees.fees')}}</a> </li>
                             <li> <a href="">{{trans('students.InvoicesFees')}}</a> </li>
                         </ul>
                     </li>
