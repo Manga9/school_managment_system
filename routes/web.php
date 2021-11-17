@@ -42,6 +42,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('graduates',GraduatedController::class);
         //============================Fees=========================================================
         Route::resource('fees', FeeController::class);
+        //============================Fee Invoices=================================================
+        Route::resource('feeInvoices', FeeInvoiceController::class);
+        Route::get('feeInvoices/addFee/{id}', [\App\Http\Controllers\FeeInvoiceController::class, 'addFee'])->name('feeInvoices.addFee');
     });
 
 });

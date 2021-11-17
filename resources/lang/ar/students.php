@@ -39,7 +39,7 @@ return [
     'addInvoice' => 'اضافة فاتورة جديدة',
     'editInvoice' => 'تعديل الفاتورة',
     'feeType' => 'نوع الرسوم',
-    'Invoices Fees' => 'فواتير الرسوم',
+    'InvoicesFees' => 'فواتير الرسوم',
     'studentAccounts' => 'حسابات الطالب',
     'debit' => 'دائن',
     'credit' => 'مدين',
