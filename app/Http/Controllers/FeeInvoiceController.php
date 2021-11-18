@@ -36,6 +36,7 @@ class FeeInvoiceController extends Controller
                 ]);
 
                 StudentAccount::create([
+                    'invoiceType' => 'invoice',
                     'date' => date('y-m-d'),
                     'fee_invoice_id' => $feeInvoice->id,
                     'student_id' => $invoice['student_id'],

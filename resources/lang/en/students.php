@@ -44,4 +44,6 @@ return [
     'studentAccounts' => 'Student Accounts',
     'debit' => 'Debit',
     'credit' => 'Credit',
+    'catchReceipt' => 'Catch Receipt',
+    'addCatchReceipt' => 'Add Catch Receipt',
 ];

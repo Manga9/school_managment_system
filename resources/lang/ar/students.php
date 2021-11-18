@@ -43,4 +43,6 @@ return [
     'studentAccounts' => 'حسابات الطالب',
     'debit' => 'دائن',
     'credit' => 'مدين',
+    'catchReceipt' => 'سند قبض',
+    'addCatchReceipt' => 'اضافة سند قبض',
 ];
