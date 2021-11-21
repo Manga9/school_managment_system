@@ -78,6 +78,12 @@
                                                             <a href="{{route('receiptStudents.addReceipt',$student->id)}}"><i class="fa fa-money"></i> {{trans('students.addCatchReceipt')}}</a>
                                                         </li>
                                                         <li>
+                                                            <a href="{{route('processingFees.addProcessingFee',$student->id)}}"><i class="fa fa-money"></i> {{trans('students.processingFee')}}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('payment.addPayment',$student->id)}}"><i class="fa fa-money"></i> {{trans('students.payment')}}</a>
+                                                        </li>
+                                                        <li>
                                                             <a href="{{route('students.show', $student->id)}}"><i class="fa fa-eye"></i> {{trans('students.show')}}</a>
                                                         </li>
                                                     </ul>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFundAccountsTable extends Migration
+class CreateProcessingFeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateFundAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fund_accounts', function (Blueprint $table) {
+        Schema::create('processing_fees', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->date('date');
-            $table->bigInteger('receipt_id');
-            $table->foreign('receipt_id')->nullable()->references('id')->on('receipt_students')->onUpdate('cascade')->onDelete('cascade');
-            $table->decimal('debit',8,2)->nullable();
-            $table->decimal('credit',8,2)->nullable();
+            $table->bigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students')->onUpdate('cascade')->onDelete('cascade');
+            $table->decimal('amount',8,2)->nullable();
             $table->string('description');
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ class CreateFundAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fund_accounts');
+        Schema::dropIfExists('processing_fees');
     }
 }

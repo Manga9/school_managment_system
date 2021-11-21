@@ -48,6 +48,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         //===========================Receipt Students===============================================
         Route::resource('receiptStudents', ReceiptStudentController::class);
         Route::get('receiptStudents/addReceipt/{id}', [\App\Http\Controllers\ReceiptStudentController::class, 'addReceipt'])->name('receiptStudents.addReceipt');
+        //===========================Processing Fee=================================================
+        Route::resource('processingFees', ProcessingFeeController::class);
+        Route::get('processingFees/addProcessingFee/{id}', [\App\Http\Controllers\ProcessingFeeController::class, 'addProcessingFee'])->name('processingFees.addProcessingFee');
+        //==========================Payment=========================================================
+        Route::resource('payment', PaymentController::class);
+        Route::get('payemnt/addPayment/{id}', [\App\Http\Controllers\PaymentController::class, 'addPayment'])->name('payment.addPayment');
     });
 
 });

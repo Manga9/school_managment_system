@@ -81,6 +81,7 @@
                         <ul id="table" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('fees.index')}}">{{trans('fees.fees')}}</a> </li>
                             <li> <a href="{{route('feeInvoices.index')}}">{{trans('students.InvoicesFees')}}</a> </li>
+                            <li> <a href="{{route('processingFees.index')}}">{{trans('students.processingFee')}}</a> </li>
                         </ul>
                     </li>
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">More Pages</li>
@@ -184,5 +185,3 @@
         </div>
 
         <!-- Left Sidebar End-->
-
-        <!--=================================

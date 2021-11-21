@@ -45,4 +45,6 @@ return [
     'credit' => 'مدين',
     'catchReceipt' => 'سند قبض',
     'addCatchReceipt' => 'اضافة سند قبض',
+    'processingFee' => 'استبعاد رسوم',
+    'payment' => 'سند صرف',
 ];

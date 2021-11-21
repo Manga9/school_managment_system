@@ -46,4 +46,6 @@ return [
     'credit' => 'Credit',
     'catchReceipt' => 'Catch Receipt',
     'addCatchReceipt' => 'Add Catch Receipt',
+    'processingFee' => 'Processing Fee',
+    'payment' => 'Payment',
 ];

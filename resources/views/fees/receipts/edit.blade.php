@@ -18,7 +18,6 @@
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
-
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -28,7 +27,6 @@
                             </ul>
                         </div>
                     @endif
-
                         <form method="post"  action="{{ route('receiptStudents.update', $receiptStudent->id) }}" autocomplete="off">
                             @csrf
                             {{method_field('PUT')}}
@@ -41,7 +39,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -52,7 +49,6 @@
                             </div>
                             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('main.save')}}</button>
                         </form>
-
                 </div>
             </div>
         </div>
