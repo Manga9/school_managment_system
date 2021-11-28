@@ -111,6 +111,26 @@
         }
     });
 
+    $('select[name="classroom_id"]').on('change', function () {
+        var classroom_id = $(this).val();
+        if (classroom_id) {
+            $.ajax({
+                url: "{{ URL::to('getSubjects') }}/" + classroom_id,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $('select[name="subject_id"]').empty();
+                    $('select[name="subject_id"]').append('<option disabled selected> {{trans('main.choose')}} </option>');
+                    $.each(data, function (key, value) {
+                        $('select[name="subject_id"]').append('<option value="' + key + '">' + value + '</option>');
+                    });
+                },
+            });
+        } else {
+            console.log('AJAX load did not work');
+        }
+    });
+
 
     // new grade
 

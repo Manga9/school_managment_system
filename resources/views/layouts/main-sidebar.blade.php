@@ -95,20 +95,20 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#exams">
                             <div class="pull-left"><i class="ti-id-badge"></i><span
                                     class="right-nav-text">{{trans('subjects.subjects')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
+                        <ul id="exams" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('subjects.index')}}">{{trans('subjects.subjects-list')}}</a> </li>
                         </ul>
                     </li>
                     <!-- menu item maps-->
                     <li>
-                        <a href="maps.html"><i class="ti-location-pin"></i><span class="right-nav-text">maps</span>
-                            <span class="badge badge-pill badge-success float-right mt-1">06</span></a>
+                        <a href="{{route('exams.index')}}"><i class="ti-location-pin"></i><span class="right-nav-text">{{trans('exam.exams')}}</span>
+                        </a>
                     </li>
                     <!-- menu item timeline-->
                     <li>

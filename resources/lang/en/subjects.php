@@ -7,4 +7,5 @@ return [
     'edit' => 'Edit Subject',
     'name_en' => 'Subject name in English',
     'name_ar' => 'Subject name in Arabic',
+    'name' => 'Subject Name',
 ];

@@ -58,6 +58,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('attendance', AttendanceController::class);
         //==========================Subjects========================================================
         Route::resource('subjects', SubjectController::class);
+        //==========================Exams===========================================================
+        Route::resource('exams', ExamController::class);
+        Route::get('getSubjects/{id}', [\App\Http\Controllers\ExamController::class, 'getSubjects'])->name('exams.getSubjects');
+
     });
 
 });
