@@ -54,6 +54,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         //==========================Payment=========================================================
         Route::resource('payment', PaymentController::class);
         Route::get('payemnt/addPayment/{id}', [\App\Http\Controllers\PaymentController::class, 'addPayment'])->name('payment.addPayment');
+        //==========================Attendance======================================================
+        Route::resource('attendance', AttendanceController::class);
+        //==========================Subjects========================================================
+        Route::resource('subjects', SubjectController::class);
     });
 
 });

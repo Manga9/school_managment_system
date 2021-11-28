@@ -47,4 +47,6 @@ return [
     'addCatchReceipt' => 'اضافة سند قبض',
     'processingFee' => 'استبعاد رسوم',
     'payment' => 'سند صرف',
+    'list' => 'قائمة الطلاب',
+
 ];

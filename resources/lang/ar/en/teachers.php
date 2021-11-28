@@ -15,5 +15,4 @@ return [
     'edit' => 'Edit Teacher',
     'teacher' => 'Teacher',
     'choose' => 'Choose Teacher...',
-    'name' => 'Teacher Name',
 ];
