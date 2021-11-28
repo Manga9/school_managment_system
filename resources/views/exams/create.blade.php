@@ -64,19 +64,25 @@
                                         <label for="inputState">{{trans('students.classroom')}}</label>
                                         <select name="classroom_id" class="custom-select"></select>
                                     </div>
+
                                     <div class="form-group col">
                                         <label for="inputState">{{trans('subjects.name')}}</label>
                                         <select class="custom-select my-1 mr-sm-2" name="subject_id">
-                                            {{-- <option selected disabled>{{trans('main.choose')}}...</option>
-                                            @foreach($subjects as $subject)
-                                                <option value="{{$subject->id}}">{{$subject->name}}</option>
-                                            @endforeach --}}
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group col">
+                                        <div class="form-group col">
+                                            <label for="inputState">{{trans('teachers.name')}}</label>
+                                            <select class="custom-select my-1 mr-sm-2" name="teacher_id">
+                                                <option selected disabled>{{trans('main.choose')}}...</option>
+                                                @foreach($teachers as $teacher)
+                                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <label for="academic_year">{{trans('students.academic_year')}} : <span class="text-danger">*</span></label>
                                         <select class="custom-select mr-sm-2" name="academic_year">
                                             <option selected disabled>{{trans('main.choose')}}...</option>

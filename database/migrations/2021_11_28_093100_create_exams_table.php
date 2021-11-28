@@ -18,6 +18,8 @@ class CreateExamsTable extends Migration
             $table->string('name');
             $table->bigInteger('subject_id');
             $table->foreign('subject_id')->references('id')->on('subjects')->onUpdate('cascade')->onDelete('cascade');
+            $table->bigInteger('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('grade_id');
             $table->foreign('grade_id')->references('id')->on('grades')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('classroom_id');

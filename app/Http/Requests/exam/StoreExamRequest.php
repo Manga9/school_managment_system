@@ -30,6 +30,7 @@ class StoreExamRequest extends FormRequest
             'classroom_id' => 'required',
             'term' => 'required',
             'subject_id' => 'required',
+            'teacher_id' => 'required',
             'academic_year' => 'required',
         ];
     }

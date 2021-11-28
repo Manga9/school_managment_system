@@ -32,6 +32,7 @@
                                             <th>#</th>
                                             <th>{{trans('exam.name')}}</th>
                                             <th>{{trans('subjects.name')}}</th>
+                                            <th>{{trans('teachers.name')}}</th>
                                             <th>{{trans('students.grade')}}</th>
                                             <th>{{trans('students.classroom')}}</th>
                                             <th>{{trans('exam.term')}}</th>
@@ -45,6 +46,7 @@
                                                 <td>{{$loop->iteration}}</td>
                                                 <td>{{$exam->name}}</td>
                                                 <td>{{$exam->subject->name}}</td>
+                                                <td>{{$exam->teacher->name}}</td>
                                                 <td>{{$exam->grade->name}}</td>
                                                 <td>{{$exam->classroom->name}}</td>
                                                 <td>{{$exam->term}}</td>

@@ -7,8 +7,8 @@ use App\Models\Classroom;
 use App\Models\Exam;
 use App\Models\Grade;
 use App\Models\Subject;
+use App\Models\Teacher;
 use Exception;
-use Illuminate\Http\Request;
 
 class ExamController extends Controller
 {
@@ -22,7 +22,8 @@ class ExamController extends Controller
     {
         $grades = Grade::all();
         $subjects = Subject::all();
-        return view('exams.create', compact('grades', 'subjects'));
+        $teachers = Teacher::all();
+        return view('exams.create', compact('grades', 'subjects', 'teachers'));
     }
 
     public function store(StoreExamRequest $request)
@@ -34,6 +35,7 @@ class ExamController extends Controller
                 'grade_id' => $request->grade_id,
                 'classroom_id' => $request->classroom_id,
                 'subject_id' => $request->subject_id,
+                'teacher_id' => $request->teacher_id,
                 'academic_year' => $request->academic_year
             ]);
 
@@ -50,7 +52,8 @@ class ExamController extends Controller
         $grades = Grade::all();
         $classrooms = Classroom::where('grade_id', $exam->grade_id)->get();
         $subjects = Subject::where('classroom_id', $exam->classroom_id)->get();
-        return view('exams.edit', compact('exam', 'grades', 'classrooms', 'subjects'));
+        $teachers = Teacher::all();
+        return view('exams.edit', compact('exam', 'grades', 'classrooms', 'subjects', 'teachers'));
     }
 
     public function update(StoreExamRequest $request, Exam $exam)
@@ -62,6 +65,7 @@ class ExamController extends Controller
                 'grade_id' => $request->grade_id,
                 'classroom_id' => $request->classroom_id,
                 'subject_id' => $request->subject_id,
+                'teacher_id' => $request->teacher_id,
                 'academic_year' => $request->academic_year
             ]);
 

@@ -23,4 +23,8 @@ class Exam extends Model
     public function classroom() {
         return $this->belongsTo(Classroom::class);
     }
+
+    public function teacher() {
+        return $this->belongsTo(Teacher::class);
+    }
 }

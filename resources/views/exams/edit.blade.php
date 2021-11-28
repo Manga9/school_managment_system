@@ -87,6 +87,17 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
+                                        <label for="inputState">{{trans('teachers.teacher')}}</label>
+                                        <select class="custom-select my-1 mr-sm-2" name="teacher_id">
+                                            <option selected disabled>{{trans('main.choose')}}...</option>
+                                            @foreach($teachers as $teacher)
+                                                <option
+                                                @if($teacher->id == $exam->teacher_id) selected @endif 
+                                                value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col">
                                         <label for="academic_year">{{trans('students.academic_year')}} : <span class="text-danger">*</span></label>
                                         <select class="custom-select mr-sm-2" name="academic_year">
                                             <option selected disabled>{{trans('main.choose')}}...</option>
