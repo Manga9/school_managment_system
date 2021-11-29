@@ -105,11 +105,18 @@
                             <li> <a href="{{route('subjects.index')}}">{{trans('subjects.subjects-list')}}</a> </li>
                         </ul>
                     </li>
-                    <!-- menu item maps-->
                     <li>
-                        <a href="{{route('exams.index')}}"><i class="ti-location-pin"></i><span class="right-nav-text">{{trans('exam.exams')}}</span>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#questions">
+                            <div class="pull-left"><i class="ti-id-badge"></i><span
+                                    class="right-nav-text">{{trans('exam.exams')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
                         </a>
-                    </li>
+                        <ul id="questions" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('exams.index')}}">{{trans('exam.exams-list')}}</a> </li>
+                            <li> <a href="{{route('questions.index')}}">{{trans('question.questions')}}</a> </li>
+                        </ul>
+                    </li>                   
                     <!-- menu item timeline-->
                     <li>
                         <a href="timeline.html"><i class="ti-panel"></i><span class="right-nav-text">timeline</span>
