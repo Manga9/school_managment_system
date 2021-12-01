@@ -63,6 +63,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('getSubjects/{id}', [\App\Http\Controllers\ExamController::class, 'getSubjects'])->name('exams.getSubjects');
         //==========================Questions=======================================================
         Route::resource('questions', QuestionController::class);
+        //==========================Online==========================================================
+        Route::resource('online', OnlineController::class);
 
     });
 

@@ -55,7 +55,6 @@
                                                         @csrf
                                                         {{method_field('DELETE')}}
                                                         <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('{{trans("messages.confirm")}}')"><i class="ti-trash"></i></button>
-
                                                     </form>
                                                 </td>
                                             </tr>
